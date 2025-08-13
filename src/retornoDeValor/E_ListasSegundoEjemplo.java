@@ -38,7 +38,15 @@ public class E_ListasSegundoEjemplo {
 	// FUNCIÓN que pide al usuario un nombre y lo devuelve como resultado
 	public static String pedirNombreABuscar() {
 		System.out.print("Ingresá un nombre para buscar: ");
-		return entrada.nextLine(); // Devuelve lo que el usuario escribió
+		String nombreParaBuscar = entrada.nextLine();
+		
+		  if (nombreParaBuscar.isEmpty()) {
+		        System.out.println("No ingresaste ningún nombre. Saliendo...");
+		        return ""; // retorna vacío y termina la función acá
+		    }
+		  
+		return nombreParaBuscar; // Devuelve lo que el usuario escribió
+		
 	}
 
 	// FUNCIÓN que busca un nombre en la lista y devuelve true si lo encuentra

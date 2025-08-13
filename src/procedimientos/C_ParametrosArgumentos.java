@@ -25,8 +25,16 @@ public class C_ParametrosArgumentos {
         String simbolo = entrada.nextLine();
 
         System.out.print("¿Cuántas veces querés repetirlo? ");
-        int cantidad = entrada.nextInt();
+      
 
+     // Verifico antes de leer
+        if (!entrada.hasNextInt()) {
+            System.out.println("⚠️ Error: No ingresaste un número entero. Saliendo...");
+            entrada.nextLine(); // descarto lo que escribió el usuario
+            return; // corto la función si no es válido
+        }
+        int cantidad = entrada.nextInt();
+        
         repetirLinea(simbolo, cantidad);  
         // Acá PASAMOS los argumentos 'simbolo' y 'cantidad' a la función 'repetirLinea'
 
